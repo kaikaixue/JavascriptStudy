@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-26 20:29:12
+ * @LastEditTime: 2021-11-26 20:34:42
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\Null.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myObj = null;
+        console.log(typeof myObj);  // object
+
+        // 定义未赋值
+        let name;
+        console.log(name);  // undefined
+        console.log(typeof name);    // undefined
+
+        // 未定义
+        console.log(typeof a);  // undefined
+
+        // 函数无返回值
+        // function foo() { }
+        // console.log(foo());    // undefined
+
+        // 调用函数，为传参
+        function foo(name) {
+            console.log(name)   // undefined
+        }
+
+        foo();
+    </script>
+</body>
+
+</html>

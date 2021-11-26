@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-26 15:39:54
+ * @LastEditTime: 2021-11-26 16:00:50
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点我" onclick="alert('松山院')" />
+</body>
+<script>
+    var name = 'ssy';
+    var age = 20;
+    console.log(`我是${name},age:${age}`)
+
+    const nameList = ['Java', 'JavaScript', 'HTML'];
+    function myTemplate() {
+        // join的意思是，把数组里的内容合并成一个字符串
+        return `<ul>${nameList.map((item) => `<li>${item}</li>`).join('')}</ul>`
+    }
+    document.body.innerHTML = myTemplate()
+</script>
+
+</html>

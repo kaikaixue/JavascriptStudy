@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-26 20:45:16
+ * @LastEditTime: 2021-11-26 20:52:31
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\typeof和数据类型转换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 255;
+        // 对于Number调用toString()时可以在方法中传递一个整数作为参数，转成指定进制
+        a = a.toString(2);
+        console.log(a);
+        console.log(typeof a);
+
+        console.log(parseInt("2021年在公众号上发了10篇文章")); //打印结果：2021
+        console.log(parseInt("2021.01在公众号上写了6篇文章")); //打印结果仍是：2021（说明只会取整数）
+        console.log(parseInt("aaa2021.01在公众号上写了6篇文章")); //打印结果：NaN （因为不是以数字开头）
+        var a = 168.23
+        console.log(parseInt(a)) //打印结果：168  （因为是先将 a 转为字符串"168.23"，然后然后再操作）
+        var b = true;
+        console.log(parseInt(b)) //打印结果：NaN （因为是先将 b 转为字符串"true"，然后然后再操作）
+        var c = null;
+        console.log(parseInt(c)) //打印结果：NaN  （因为是先将 c 转为字符串"null"，然后然后再操作）
+        var d = undefined;
+        console.log(parseInt(d)) //打印结果：NaN  （因为是先将 d 转为字符串"undefined"，然后然后再操作）
+        // 截断，不取整
+        var a = parseInt(5.8) + parseInt(4.7);
+        console.log(a);  // 9
+        var a = '110';
+        var num = parseInt(a, 16); //【重要】将a当成十六进制来看待，转换成十进制的num
+        console.log(num);   //272
+    </script>
+</body>
+
+</html>
