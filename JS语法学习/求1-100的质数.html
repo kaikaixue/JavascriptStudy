@@ -1,0 +1,55 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-27 20:22:15
+ * @LastEditTime: 2021-11-27 20:22:15
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\求1-100的质数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打印 1~100 之间的所有质数</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>质数相关</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 2; i <= 100; i++) {
+            //创建一个布尔值，用来保存结果，默认i是质数   
+            var flag = true;
+            //判断i是否是质数        
+            //获取到2-i之间的所有的数     
+            for (var j = 2; j < i; j++) {
+                //判断i是否能被j整除   
+                if (i % j == 0) {
+                    //如果进入判断则证明i不是质数,修改flag值为false    
+                    flag = false;
+                }
+            }
+            //如果是质数，则打印i的值   
+            if (flag) {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+
+</html>

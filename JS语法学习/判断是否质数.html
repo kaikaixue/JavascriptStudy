@@ -1,0 +1,55 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-27 20:18:23
+ * @LastEditTime: 2021-11-27 20:21:36
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\质数练习.html
+-->
+/*
+* @Author: your name
+* @Date: 2021-11-27 20:18:23
+* @LastEditTime: 2021-11-27 20:18:23
+* @LastEditors: Please set LastEditors
+* @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+* @FilePath: \JavaScriptStudy\JS语法学习\质数练习.js
+*/
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>质数相关</title>
+</head>
+
+<body>
+    <script>
+        var num = prompt('请输入一个大于1的整数:');
+        //判断这个值是否合法
+        if (num <= 1) {
+            alert('该值不合法！');
+        } else {
+            //先用flag标志位，来保存当前的数的状态
+            //默认当前num是质数 
+            var flag = true;
+            //判断num是否是质数 
+            //获取2-num之间的数 
+            for (var i = 2; i < num; i++) {
+                //判断num是否能被i整除 
+                if (num % i == 0) {
+                    //一旦发现：如果num能被i整除，则说明num一定不是质数
+                    //此时：设置flag为false，然后跳出 for 循环 
+                    flag = false;
+                    break;
+                }
+            }
+            //如果num是质数则输出 
+            if (flag) {
+                alert(num + '是质数！');
+            } else {
+                alert('这个不是质数');
+            }
+        }</script>
+</body>
+
+</html>

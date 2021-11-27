@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-27 20:23:11
+ * @LastEditTime: 2021-11-27 20:23:31
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\99乘法表.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九乘法表</title>
+    <style>
+        body {
+            width: 2000px;
+        }
+
+        span {
+            display: inline-block;
+            width: 80px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //创建外层循环，用来控制乘法表的高度    
+        for (var i = 1; i <= 9; i++) {
+            //创建一个内层循环来控制图形的宽度       
+            for (var j = 1; j <= i; j++) {
+                document.write('<span>' + j + '*' + i + '=' + i * j + '</span>');
+            }                //输出一个换行           
+            document.write('<br />');
+        }
+    </script>
+</body>
+
+</html>
