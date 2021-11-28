@@ -1,0 +1,36 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-28 19:05:28
+ * @LastEditTime: 2021-11-28 19:08:07
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\伪数组.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+
+    <script>
+        let btnArray = document.getElementsByTagName('button')
+        console.log(btnArray)
+        console.log(btnArray[0])
+        console.log(typeof btnArray)
+        btnArray = Array.from(btnArray)
+        btnArray.forEach(element => {
+            console.log(element)
+        })
+    </script>
+</body>
+
+</html>
