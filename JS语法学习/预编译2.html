@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-02 00:05:16
+ * @LastEditTime: 2021-12-02 00:05:16
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\预编译2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预编译</title>
+</head>
+
+<body>
+  <script>
+    function fn(a) {
+      console.log(a);
+      var a = 666;
+      console.log(a);
+      function a() { }
+      console.log(a);
+      var b = function () { };
+      console.log(b);
+      function c() { }
+    }
+    fn(1);
+  </script>
+</body>
+
+</html>

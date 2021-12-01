@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-02 00:30:14
+ * @LastEditTime: 2021-12-02 00:31:20
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\apply.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过apply()改变this指向</title>
+</head>
+
+<body>
+    <script>
+        var obj1 = { nickName: 'ssy', age: 20, };
+        function fn1(a) {
+            console.log(this);
+            console.log(this.nickName);
+            console.log(a);
+        }
+        fn1.apply(obj1, ['hello']); // 先将 this 指向 obj1，然后执行 fn1() 函数
+
+        // 求最大值和最小值
+        const arr1 = [3, 7, 10, 8];
+        // 下面这一行代码的目的，无需改变 this 指向，所以：第一个参数填 null，或者填 Math，或者填 this 都可以。严格模式中，不让填null
+        const maxValue = Math.max.apply(Math, arr1); // 求数组 arr1 中元素的最大值
+        console.log(maxValue);
+        const minValue = Math.min.apply(Math, arr1); // 求数组 arr1 中元素的最小值
+        console.log(minValue);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-02 00:02:11
+ * @LastEditTime: 2021-12-02 00:02:11
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\预编译.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>预编译</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      var a = b = 100; // 连续赋值
+    }
+    foo();
+    console.log(window.b); // 在全局范围内访问 b
+    console.log(b); // 在全局范围内访问 b，但是前面没有加window
+    console.log(window.a); // 在全局范围内访问 a
+    console.log(a); // 在全局范围内访问 a，但是前面没有加window 
+  </script>
+</body>
+
+</html>
