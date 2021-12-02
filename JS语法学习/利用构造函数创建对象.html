@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-02 18:55:19
+ * @LastEditTime: 2021-12-02 19:02:16
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\利用构造函数创建对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个构造函数
+        function Student(name) {
+            this.name = name
+            this.sayHi = function () {
+                console.log(this.name + '厉害了')
+            }
+        }
+
+        var stud1 = new Student('ssy')
+        console.log(stud1)
+        stud1.sayHi()
+        var stud2 = new Student('JavaScript')
+        console.log(stud2)
+        stud2.sayHi()
+    </script>
+</body>
+
+</html>
