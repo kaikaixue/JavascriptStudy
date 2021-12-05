@@ -1,0 +1,71 @@
+*:before,
+*:after {
+    /* box-sizing: border-box，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制，不会因为设置了边距而使元素宽高改变 */
+    /* -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #1f1f1f;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+.cont {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    padding: 80px 70px;
+}
+
+.cont_inner {
+    position: relative;
+    height: 100%;
+    background: #fff;
+}
+
+.el {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 19.2%;
+    height: 100%;
+    background: #ccc;
+}
+
+.el:nth-child(1) {
+    /* -webkit 前缀是表示兼容有 webkit 的浏览器，
+      webkit 内核的浏览器有谷歌浏览器、Safari 浏览器、搜狗高速浏览器等 */
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    -webkit-transform-origin: 50% 50%; /* 设置旋转元素的基点位置 */
+    transform-origin: 50% 50%;
+}
+.el:nth-child(2) {
+    -webkit-transform: translate3d(105.2083333333%, 0, 0);
+    transform: translate3d(105.2083333333%, 0, 0);
+    -webkit-transform-origin: 155.2083333333% 50%;
+    transform-origin: 155.2083333333% 50%;
+}
+
+.el:nth-child(3) {
+    -webkit-transform: translate3d(210.4166666667%, 0, 0);
+    transform: translate3d(210.4166666667%, 0, 0);
+    -webkit-transform-origin: 260.4166666667% 50%;
+    transform-origin: 260.4166666667% 50%;
+}
+
+.el:nth-child(4) {
+    -webkit-transform: translate3d(315.625%, 0, 0);
+    transform: translate3d(315.625%, 0, 0);
+    -webkit-transform-origin: 365.625% 50%;
+    transform-origin: 365.625% 50%;
+}
+
+.el:nth-child(5) {
+    -webkit-transform: translate3d(420.8333333333%, 0, 0);
+    transform: translate3d(420.8333333333%, 0, 0);
+    -webkit-transform-origin: 470.8333333333% 50%;
+    transform-origin: 470.8333333333% 50%;
+}
