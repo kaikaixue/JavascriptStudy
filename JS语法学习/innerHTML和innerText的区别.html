@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-07 23:07:57
+ * @LastEditTime: 2021-12-07 23:21:53
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\innerHTML和innerText的区别.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp1" value="input的value属性的值">
+    <div id="box11">
+        box11: hello
+        <div id="box12">
+            我是box12的内容
+        </div>
+    </div>
+
+    <div id="box21">
+        box21: world
+        <div id="box22">
+            我是box22的内容
+        </div>
+    </div>
+
+    <script>
+        // input标签的value属性
+        console.log(document.getElementById('inp1'.value))
+        // innerHTML: 获取双闭合标签里的内容（识别标签）
+        console.log(document.getElementById('box11').innerHTML)
+        // innerText: 获取双闭合标签里的内容（不识别标签）
+        console.log(document.getElementById('box21').innerText)
+        document.getElementById('box11').innerHTML = '<h1>我是innerHTML</h1>'
+        document.getElementById('box21').innerText = '<h1>我是innerText</h1>'
+    </script>
+</body>
+
+</html>

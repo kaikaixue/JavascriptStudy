@@ -1,0 +1,81 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-07 19:22:10
+ * @LastEditTime: 2021-12-07 22:45:04
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\鼠标悬停变换图片.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='box' title="主体" class="abcd">
+        我爱你中国
+    </div>
+    <!-- <img src="images/1.jpg" class="image-box" title="图片1" alt="图片1" id="a1"> -->
+    <!-- <div class="box11">
+        <div class="box12">好好学习</div>
+    </div>
+    <div class="box21">
+        <div class="box22">天天向上</div>
+    </div> -->
+    <script>
+        // var a1 = document.createElement("li")
+        // var a2 = document.createElement("abc")
+
+        // var box1 = document.getElementsByClassName('box1')[0]
+
+        // box1.appendChild(a1)    // 将a1标签插入到box1标签里面
+        // box1.insertBefore(b1, a1)   // 将b1标签插入到box1标签里面
+        // var box11 = document.getElementsByClassName("box11")[0]
+        // var box22 = document.getElementsByClassName("box22")[0]
+        // box11.appendChild(box22)
+
+        /**
+         *  获取节点属性
+         */
+        // var myNode = document.getElementsByTagName("img")[0]
+        // console.log(myNode.src)
+        // console.log(myNode.className)
+        // console.log(myNode.title)
+        // console.log('-------------------')
+        // console.log(myNode["src"])
+        // console.log(myNode["className"])
+        // console.log(myNode["title"])
+        // console.log(myNode.getAttribute("src"));
+        // console.log(myNode.getAttribute("class"));   // 注意是class，不是className 
+        // console.log(myNode.getAttribute("title"));
+        // /**
+        //  * 设置节点的属性值
+        //  */
+        // myNode.src = "images/2.jpg"
+        // myNode.className = "image2-box"
+        // myNode.setAttribute("src", "images/3.jpg")
+        // myNode.setAttribute("class", "image3-box")
+        // myNode.setAttribute("id", "你好")
+        // /**
+        //  * 删除节点的属性
+        //  */
+        // myNode.removeAttribute("class")
+        // myNode.removeAttribute("id")
+
+        var div = document.getElementById('box')
+        // 方式一
+        div.aaaa = "1111"
+        console.log(div.aaaa)
+        // 方式二
+        div.setAttribute("bbbb", "2222")
+        console.log(div.getAttribute("aaaa"))
+        console.log(div.bbbb)
+    </script>
+</body>
+
+</html>
