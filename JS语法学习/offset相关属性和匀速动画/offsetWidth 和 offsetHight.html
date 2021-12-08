@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-08 13:52:03
+ * @LastEditTime: 2021-12-08 13:52:03
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\offset相关属性和匀速动画\offsetWidth 和 offsetHight.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>offsetWidth 和 offsetHight</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid #ddd;
+      margin: 100px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    let div = document.getElementsByTagName("div")[0];
+    // 打印结果：140（100+20+20）
+    console.log(div.offsetHeight);
+    // 打印结果：number     
+    console.log(typeof div.offsetHeight);
+  </script>
+</body>
+
+</html>
