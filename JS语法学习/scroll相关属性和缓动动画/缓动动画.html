@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-09 23:06:06
+ * @LastEditTime: 2021-12-09 23:08:14
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\scroll相关属性和缓动动画\缓动动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓动动画</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: pink;
+            position: absolute;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button>运动到left = 400px</button>
+    <div></div>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0]
+        var div = document.getElementsByTagName("div")[0]
+
+        btn.onclick = function () {
+            setInterval(() => {
+                div.style.left = div.offsetLeft + (400 - div.offsetLeft) / 10 + "px"
+            }, 30);
+        }
+    </script>
+</body>
+
+</html>

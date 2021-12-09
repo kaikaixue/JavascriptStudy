@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-09 20:39:40
+ * @LastEditTime: 2021-12-09 20:48:05
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\scroll相关属性和缓动动画\封装scrollTop和scrollLeft.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装scrollTop和scrollLeft</title>
+    <style>
+        body {
+            height: 6000px;
+            width: 5000px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onscroll = function () {
+            console.log(scroll().top)
+            console.log(scroll().left)
+        }
+        // 函数封装，此函数的返回值是对象
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+                left: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

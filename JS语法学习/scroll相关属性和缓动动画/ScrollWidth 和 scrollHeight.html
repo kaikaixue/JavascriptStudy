@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-09 20:23:54
+ * @LastEditTime: 2021-12-09 23:29:31
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\scroll相关属性和缓动动画\ScrollWidth 和 scrollHeight.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollWidth 和 scrollHeight</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: 3px;
+            border: 8px solid grey;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        彼岸花开，开到荼蘼。
+        彼岸花开，开到荼蘼。
+        彼岸花开，开到荼蘼。
+        彼岸花开，开到荼蘼。
+        彼岸花开，开到荼蘼。
+        彼岸花开，开到荼蘼。
+    </div>
+    <script>
+        let div = document.getElementsByTagName("div")[0]
+        // scrollHeight的特点是：如果内容超出了盒子，scrollHeight 为内容的高
+        console.log(div.scrollWidth)
+        console.log(div.scrollHeight)
+    </script>
+</body>
+
+</html>
