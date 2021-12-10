@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-10 23:36:29
+ * @LastEditTime: 2021-12-10 23:37:59
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\事件的绑定和事件对象Event\获取鼠标距离所在盒子的距离.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取鼠标距离所在盒子的距离</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      padding-top: 100px;
+      background-color: pink;
+      margin: 100px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+  </div>
+  <script>
+    var div = document.getElementsByTagName("div")[0];
+    div.onmousemove = function (event) {
+      event = event || window.event;
+      //2.获取鼠标在整个页面的位置
+      var pageX = event.pageX || scroll().left + event.clientX;
+      var pageY = event.pageY || scroll().top + event.clientY;
+      //3.用鼠标的位置减去盒子的位置
+      var targetX = pageX - div.offsetLeft;
+      var targetY = pageY - div.offsetTop;
+      this.innerHTML = `<p>鼠标在盒子中的X坐标为${targetX}</p><p>鼠标在盒子中的Y坐标为${targetY}</p>`
+    }
+
+  </script>
+</body>
+
+</html>
