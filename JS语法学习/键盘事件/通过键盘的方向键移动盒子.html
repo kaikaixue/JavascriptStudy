@@ -1,0 +1,72 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-12 15:14:34
+ * @LastEditTime: 2021-12-12 15:14:35
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\键盘事件\通过键盘的方向键移动盒子.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通过键盘的方向键移动盒子</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1"></div>
+  <script>
+    // 使div可以根据不同的方向键向不同的方向移动
+    //为document绑定一个按键按下的事件
+    document.onkeydown = function (event) {
+      event = event || window.event;
+
+      //定义一个变量，来表示移动的速度
+      var speed = 10;
+
+      //当用户按了ctrl以后，速度加快
+      if (event.ctrlKey) {
+        console.log('smyhvae ctrl');
+        speed = 20;
+      }
+
+      /*
+       * 37 左
+       * 38 上
+       * 39 右
+       * 40 下
+       */
+      switch (event.keyCode) {
+        case 37:
+          //alert("向左"); left值减小
+          box1.style.left = box1.offsetLeft - speed + 'px'; // 在初始值的基础之上，减去 speed 大小
+          break;
+        case 39:
+          //alert("向右");
+          box1.style.left = box1.offsetLeft + speed + 'px';
+          break;
+        case 38:
+          //alert("向上");
+          box1.style.top = box1.offsetTop - speed + 'px';
+          break;
+        case 40:
+          //alert("向下");
+          box1.style.top = box1.offsetTop + speed + 'px';
+          break;
+      }
+    };
+  </script>
+</body>
+
+</html>

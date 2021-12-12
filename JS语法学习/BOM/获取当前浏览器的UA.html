@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-12 15:26:34
+ * @LastEditTime: 2021-12-12 15:26:34
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\BOM\获取当前浏览器的UA.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取当前浏览器的UA</title>
+</head>
+
+<body>
+  <script>
+    var ua = navigator.userAgent; // 获取当前浏览器的 userAgent
+    console.log('当前浏览器的UA是：' + ua);
+    if (/firefox/i.test(ua)) {
+      alert('是火狐浏览器');
+    } else if (/chrome/i.test(ua)) {
+      alert('是Chrome浏览器');
+    } else if (/msie/i.test(ua)) {
+      alert('是IE浏览器');
+    } else if ('ActiveXObject' in window) {
+      alert('是 IE11 浏览器');
+    }
+  </script>
+</body>
+
+</html>

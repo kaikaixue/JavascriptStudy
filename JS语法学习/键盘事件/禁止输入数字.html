@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-12 15:13:36
+ * @LastEditTime: 2021-12-12 15:13:37
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\键盘事件\禁止输入数字.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>禁止输入数字</title>
+</head>
+
+<body>
+  <input type="text" />
+
+  <script>
+    //获取input
+    var input = document.getElementsByTagName('input')[0];
+
+    input.onkeydown = function (event) {
+      event = event || window.event;
+      console.log(event.keyCode);
+      //数字: 48 - 57
+      if (event.keyCode >= 48 && event.keyCode <= 57) {
+        //在文本框中输入内容，是onkeydown的默认行为，要阻止默认行为，让输入的数字内容不会出现
+        return false;
+      }
+    };
+  </script>
+</body>
+
+</html>

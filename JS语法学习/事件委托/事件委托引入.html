@@ -1,0 +1,55 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-11 17:58:36
+ * @LastEditTime: 2021-12-11 17:58:36
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\事件委托\事件委托引入.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件委托引入</title>
+  <style>
+    #parent-list {
+      list-style: none;
+    }
+
+    .my-link {
+      font-size: 24px;
+      text-decoration: none;
+      color: rgb(168, 75, 156);
+    }
+
+    .my-link:hover {
+      color: rgb(84, 136, 194);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="parent-list">
+    <li><a href="javascript:;" class="my-link">超链接一</a></li>
+    <li><a href="javascript:;" class="my-link">超链接二</a></li>
+    <li><a href="javascript:;" class="my-link">超链接三</a></li>
+  </ul>
+
+  <script>
+    window.onload = function () {
+      var parentNode = document.getElementById("parent-list");
+      var aNodes = parentNode.getElementsByTagName("a");
+      for (var i = 0, l = aNodes.length; i < l; i++) {
+        aNodes[i].onclick = function () {
+          console.log('我是超链接a的单击相应函数');
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

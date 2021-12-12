@@ -1,0 +1,67 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-11 17:49:47
+ * @LastEditTime: 2021-12-11 17:49:48
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\事件的传播和事件冒泡\事件冒泡.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件冒泡</title>
+  <style>
+    #box1 {
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+
+    #box2 {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+
+    #box3 {
+      width: 100px;
+      height: 100px;
+      background-color: cyan;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1">
+    <div id="box2">
+      <div id="box3">点击</div>
+    </div>
+  </div>
+  <script>
+    let box3 = document.getElementById('box3')
+    let box2 = document.getElementById('box2')
+    let box1 = document.getElementById('box1')
+    //事件冒泡
+    box3.onclick = function () {
+      alert("child");
+    }
+
+    box2.onclick = function () {
+      alert("father");
+    }
+
+    box1.onclick = function () {
+      alert("grandfather");
+    }
+
+    document.onclick = function () {
+      alert("body");
+    }
+  </script>
+</body>
+
+</html>

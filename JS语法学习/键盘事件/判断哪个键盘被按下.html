@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-12 15:12:01
+ * @LastEditTime: 2021-12-12 15:12:01
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS语法学习\键盘事件\判断哪个键盘被按下.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>判断哪个键盘被按下</title>
+</head>
+
+<body>
+  <script>
+    document.onkeydown = function (event) {
+      event = event || window.event;
+      // 所按键的键码
+      console.log(event.keyCode);
+
+      // 判断alt和enter是否同时被按下
+      if (event.altKey && event.keyCode === 13) {
+        console.log('alt和enter都被按下了');
+      }
+    };
+  </script>
+</body>
+
+</html>
