@@ -1,0 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-13 21:23:06
+ * @LastEditTime: 2021-12-13 21:23:06
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS异步编程\Ajax入门和发送HTTP请求\get请求.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>get请求</title>
+</head>
+
+<body>
+  <h1>Ajax发送get请求</h1>
+  <input type="button" value="发送get_ajax请求" id="btnAjax" />
+
+  <script type="text/javascript">
+    // 绑定点击事件
+    document.querySelector('#btnAjax').onclick = function () {
+
+      // 这里直接使用封装的 myAjax() 方法
+      myAjax('01-ajax.json', (res) => {
+        console.log(res);
+        console.log(typeof res);
+        // 显示在页面上
+        document.querySelector('h1').innerHTML = JSON.parse(res).msg;
+      });
+    };
+
+    // 封装 Ajax为公共函数：传入回调函数 success 和 fail
+    function myAjax(url, success, fail) {
+      // 1、创建XMLHttpRequest对象
+      var xmlhttp;
+      if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // 兼容IE5、IE6浏览器。不写也没关系
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      // 2、发送请求
+      xmlhttp.open('GET', url, true);
+      xmlhttp.send();
+      // 3、服务端响应
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+          var obj = JSON.parse(xmlhttp.responseText);
+          console.log('数据返回成功：' + obj);
+          success && success(xmlhttp.responseText);
+        } else {
+          // 这里的 && 符号，意思是：如果传了 fail 参数，就调用后面的 fail()
+          // 如果没传 fail 参数，就不调用后面的内容。因为 fail 参数不一定会传
+          fail && fail(new Error('接口请求失败'));
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>
