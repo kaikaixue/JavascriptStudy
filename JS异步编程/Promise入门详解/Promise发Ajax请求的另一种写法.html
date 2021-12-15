@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-15 22:06:33
+ * @LastEditTime: 2021-12-15 22:06:33
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \JavaScriptStudy\JS异步编程\Promise入门详解\Promise发Ajax请求的另一种写法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise发Ajax请求的另一种写法</title>
+</head>
+
+<body>
+  <script>
+    function ajax(url, success, fail) {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open('GET', url);
+      xmlhttp.send();
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+          success && success(xmlhttp.responseText);
+        } else {
+          // 这里的 && 符号，意思是：如果传了 fail 参数，就调用后面的 fail()；如果没传 fail 参数，就不调用后面的内容。因为 fail 参数不一定会传。
+          fail && fail(new Error('接口请求失败'));
+        }
+      };
+    }
+
+    // 第一步：model层的接口封装
+    const promiseB = new Promise((resolve, reject) => {
+      ajax('Person.json', (res) => {
+        resolve('request success' + res);
+        // // 这里的 res 是接口的返回结果。返回码 retCode 是动态数据。
+        // if (res.retCode == 0) {
+        //   // 接口请求成功时调用
+        //   resolve('request success' + res);
+        // } else {
+        //   // 接口请求失败时调用
+        //   reject({ retCode: -1, msg: 'network error' });
+        // }
+      });
+    });
+
+    // 第二步：业务层的接口调用。这里的 data 就是 从 resolve 和 reject 传过来的，也就是从接口拿到的数据
+    promiseB
+      .then((res) => {
+        // 从 resolve 获取正常结果
+        console.log(res);
+      })
+      .catch((err) => {
+        // 从 reject 获取异常结果
+        console.log(err);
+      });
+  </script>
+</body>
+
+</html>
